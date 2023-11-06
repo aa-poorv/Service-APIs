@@ -16,7 +16,7 @@ exports.removeCategory = async (req, res, next) => {
   const id = req.params.id;
   try {
     const { services } = await Category.findById(id).populate("services");
-    if (services.length >= 0) {
+    if (services.length > 0) {
       next({ status: 404, message: "Cannot delete category is not empty" });
     } else if (services.length === 0) {
       await Category.findByIdAndDelete(id);
