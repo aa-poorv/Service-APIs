@@ -1,0 +1,235 @@
+{
+  "info": {
+    "_postman_id": "ab34efc8-6a6c-4dfa-9c51-7762f28fb69a",
+    "name": "Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28243961"
+  },
+  "item": [
+    {
+      "name": "Post a new category",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"categoryName\": \"Front end Development\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/category",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["category"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all Categories",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTkyNzM3NTksImV4cCI6MTY5OTM2MDE1OSwiYXVkIjoiNjU0OGRiMzc5ZjAzODgyZDljMjJiYzU3IiwiaXNzIjoiQXBvb3J2IFBhbmRleSJ9.eot1eey_IPK2pk8y26ULVS18jJeunP1sWTLdnKOjuRc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/categories",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["categories"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add new Service to Category",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"serviceName\": \"old Service\",\r\n    \"Type\": \"VIP\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b/service",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["category", "6548bb80b5758cf944aa8c9b", "service"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create an API to update a single category",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["category", "6548bb80b5758cf944aa8c9b"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Price options with given Id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"serviceName\": \"New Service\",\r\n    \"Type\": \"VIP\",\r\n    \"PriceOptions\": [\r\n        {\r\n        \"Duration\": 5,\r\n        \"Price\": 23,\r\n        \"Type\": \"Monthly\"\r\n    },\r\n    {\r\n        \"Duration\": 6,\r\n        \"Price\": 7,\r\n        \"Type\": \"Hourly\"\r\n    }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b/service/6548c69a1f429bb24c14d8d3/price/6548d525403655389c46d325",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": [
+            "category",
+            "6548bb80b5758cf944aa8c9b",
+            "service",
+            "6548c69a1f429bb24c14d8d3",
+            "price",
+            "6548d525403655389c46d325"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Api to sign in the user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"apoorvrpandey@gmail.com\",\r\n    \"password\": \"ap123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/auth/signin",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["auth", "signin"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API to remove empty(With no services)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["category", "6548bb80b5758cf944aa8c9b"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API to add services",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b/services",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["category", "6548bb80b5758cf944aa8c9b", "services"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API to remove service from category.",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTkyNzM3NTksImV4cCI6MTY5OTM2MDE1OSwiYXVkIjoiNjU0OGRiMzc5ZjAzODgyZDljMjJiYzU3IiwiaXNzIjoiQXBvb3J2IFBhbmRleSJ9.eot1eey_IPK2pk8y26ULVS18jJeunP1sWTLdnKOjuRc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b/service/6548c69a1f429bb24c14d8d3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": [
+            "category",
+            "6548bb80b5758cf944aa8c9b",
+            "service",
+            "6548c69a1f429bb24c14d8d3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API to update service as per the service(add/update price Options)",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/category/6548bb80b5758cf944aa8c9b/service/6548c69a1f429bb24c14d8d3/price/6548d525403655389c46d325",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": [
+            "category",
+            "6548bb80b5758cf944aa8c9b",
+            "service",
+            "6548c69a1f429bb24c14d8d3",
+            "price",
+            "6548d525403655389c46d325"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
